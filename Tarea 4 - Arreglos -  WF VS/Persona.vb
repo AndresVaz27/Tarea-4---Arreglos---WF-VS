@@ -32,10 +32,14 @@ Namespace Tarea_2___Segundo_Semestre
                 Dim edad As Integer
                 edad = (DateTime.Now.Year - fechaNacimiento.Value.Year)
 
-                If fechaNacimiento.Value.Month >= DateTime.Now.Month Then
+                If fechaNacimiento.Value.Month = DateTime.Now.Month Then
+                    If fechaNacimiento.Value.Day > DateTime.Now.Day Then
+                        edad -= 1
+                    End If
+                End If
+                If fechaNacimiento.Value.Month > DateTime.Now.Month Then
                     edad -= 1
                 End If
-
                 Return edad
             End Get
         End Property
